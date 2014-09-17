@@ -22,5 +22,6 @@ RUN echo "jenkins:jenkins" | chpasswd
 RUN mkdir /usr/lib/jenkins /var/lib/jenkins /var/run/sshd /home/jenkins 
 RUN mkdir -p /mnt/var/lib/jenkins
 # Set permissions
+RUN chown -R root:root var/run/sshd
 RUN chown -R jenkins:jenkins /usr/lib/jenkins /var/lib/jenkins /home/jenkins /mnt/var/lib/jenkins
 CMD ["/bin/bash"]
